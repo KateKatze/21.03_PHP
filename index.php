@@ -77,7 +77,7 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-            <h2>Login</h2>
+            <h2 class='mt-5 mb-5'>Welcome back! Please, log in to the system:</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
@@ -87,13 +87,14 @@ mysqli_close($connect);
 
             <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
             <span class="text-danger"><?php echo $emailError; ?></span>
-
+            <br>
             <input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="15" />
             <span class="text-danger"><?php echo $passError; ?></span>
             <hr />
             <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
             <hr />
-            <a href="register.php">Not registered yet? Click here</a>
+            <p>Not registered yet?</p>
+            <a href="register.php" class="btn btn-sm btn-success">Click here</a>
         </form>
     </div>
 </body>

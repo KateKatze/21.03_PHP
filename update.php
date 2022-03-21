@@ -83,8 +83,8 @@ mysqli_close($connect);
         }
 
         .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
+            width: 100px !important;
+            height: 100px !important;
         }
     </style>
 </head>
@@ -96,8 +96,8 @@ mysqli_close($connect);
             <p><?php echo ($uploadError) ?? ''; ?></p>
         </div>
 
-        <h2>Update</h2>
-        <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $data['picture'] ?>' alt="<?php echo $f_name ?>">
+        <h2 class="mt-5 mb-5">Update</h2>
+        <img class='img-thumbnail rounded mb-5' src='pictures/<?php echo $data['picture'] ?>' alt="<?php echo $f_name ?>">
         <form method="post" enctype="multipart/form-data">
             <table class="table">
                 <tr>

@@ -120,7 +120,7 @@ mysqli_close($connect);
 <body>
     <div class="container">
         <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" enctype="multipart/form-data">
-            <h2>Sign Up.</h2>
+            <h2 class="mt-5 mb-5">Sign Up</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
@@ -136,25 +136,28 @@ mysqli_close($connect);
 
             <input type="text" name="fname" class="form-control" placeholder="First name" maxlength="50" value="<?php echo $fname ?>" />
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
-
+            <br>
             <input type="text" name="lname" class="form-control" placeholder="Surname" maxlength="50" value="<?php echo $lname ?>" />
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
-
+            <br>
             <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
             <span class="text-danger"> <?php echo $emailError; ?> </span>
+            <br>
             <div class="d-flex">
                 <input class='form-control w-50' type="date" name="date_of_birth" value="<?php echo $date_of_birth ?>" />
                 <span class="text-danger"> <?php echo $dateError; ?> </span>
-
+                <br>
                 <input class='form-control w-50' type="file" name="picture">
                 <span class="text-danger"> <?php echo $picError; ?> </span>
             </div>
+            <br>
             <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
             <span class="text-danger"> <?php echo $passError; ?> </span>
             <hr />
             <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
             <hr />
-            <a href="index.php">Sign in Here...</a>
+            <p>Already signed up?</p>
+            <a href="index.php" class="btn btn-sm btn-success">Sign in</a>
         </form>
     </div>
 </body>

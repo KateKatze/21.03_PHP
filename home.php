@@ -29,26 +29,66 @@ mysqli_close($connect);
     <title>Welcome - <?php echo $row['first_name']; ?></title>
     <?php require_once 'components/boot.php' ?>
     <style>
+
+        html, body{
+        margin: 0;
+        }
+
         .userImage {
-            width: 200px;
-            height: 200px;
+            width: 11vw;
+            height: 24vh;
         }
 
         .hero {
-            background: rgb(2, 0, 36);
-            background: linear-gradient(24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+            background-image: url(https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png);
+            background-size: cover;
+            height: 50vh;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="hero">
-            <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-            <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h4 class="text-dark mt-2 ms-2">Hi, <?php echo $row['first_name']; ?>!</h4></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <p class="text-white">Hi <?php echo $row['first_name']; ?></p>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="logout.php?logout">Sign Out</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
+                </li>
+            </ul>
+            </div>
         </div>
-        <a href="logout.php?logout">Sign Out</a>
-        <a href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
-    </div>
+        </nav>
+        <div class="hero">
+            <img class="userImage mt-5 ms-5" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
+        </div>
+        <div class="card shadow text-center mt-5 mb-5">
+            <h2>Name</h2>
+            <p><?php echo $row['first_name']; ?></p>
+            <h2>Date of birth</h2>
+            <p><?php echo $row['date_of_birth']; ?></p>
+        </div>
+
+        <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022</p>
+  </footer>
 </body>
 </html>
